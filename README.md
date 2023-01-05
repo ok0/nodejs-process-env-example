@@ -34,9 +34,11 @@ Launch
 $ npm install
 
 # by test
+$ npm run test # maybe failed
 $ npm run test:starting
 $ npm run test:host
 $ npm run test:dotenv
+$ npm run test:container
 ```
 
 # Injection
@@ -55,7 +57,7 @@ Type ".help" for more information.
 >
 ```
 
-## Use Host variables On Unix(Mac, Linux Etc..)
+## Use Host variables On Local(Unix)
 
 ```javascript
 $ export ENV_VAR_A=A
@@ -71,10 +73,21 @@ Type ".help" for more information.
 >
 ```
 
-## Use .env
+## Use dotenv
 
 ```javascript
 require('dotenv').config();
 console.log(process.env.ENV_VAR_A);
 console.log(process.env.ENV_VAR_B);
+```
+
+## Use On Docker Container
+
+```shell
+$ docker build . -t nodejs-env-example
+
+$ docker run \
+  -e ENV_VAR_A=A \
+  -e ENV_VAR_B=B \
+  nodejs-env-example
 ```

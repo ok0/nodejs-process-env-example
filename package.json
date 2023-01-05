@@ -4,9 +4,11 @@
   "description": "## Version",
   "main": ".eslintrc.js",
   "scripts": {
-    "test:starting": "ENV_VAR_A=A ENV_VAR_B=B jest --config ./test/jest.json",
-    "test:host": "export ENV_VAR_A=A;export ENV_VAR_B=B; jest --config ./test/jest.json",
-    "test:dotenv": "unset ENV_VAR_A;unset ENV_VAR_B; jest --config ./test/jest.json"
+    "test": "jest --config ./test/jest.json",
+    "test:starting": "ENV_VAR_A=A ENV_VAR_B=B ENV_IS_DOT_ENV=false jest --config ./test/jest.json",
+    "test:host": "export ENV_VAR_A=A;export ENV_VAR_B=B;unset ENV_IS_DOT_ENV; jest --config ./test/jest.json",
+    "test:dotenv": "unset ENV_VAR_A;unset ENV_VAR_B; export ENV_IS_DOT_ENV=true; jest --config ./test/jest.json",
+    "test:container": "docker build . -t nodejs-env-example;docker run -e ENV_VAR_A=A -e ENV_VAR_B=B nodejs-env-example"
   },
   "repository": {
     "type": "git",
