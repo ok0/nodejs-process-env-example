@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-process-env-example",
+  "version": "1.0.0",
+  "description": "## Version",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test:starting": "ENV_VAR_A=A ENV_VAR_B=B jest --config ./test/jest.json",
+    "test:host": "export ENV_VAR_A=A;export ENV_VAR_B=B; jest --config ./test/jest.json",
+    "test:dotenv": "unset ENV_VAR_A;unset ENV_VAR_B; jest --config ./test/jest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ok0/nodejs-process-env-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ok0/nodejs-process-env-example/issues"
+  },
+  "homepage": "https://github.com/ok0/nodejs-process-env-example#readme",
+  "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "28.0.8",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
