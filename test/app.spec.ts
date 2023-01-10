@@ -1,9 +1,8 @@
-import {beforeEach, describe, expect, test} from '@jest/globals';
+import { beforeEach, describe, expect, test } from '@jest/globals';
 
 describe('Get Environment variables', () => {
   beforeEach(async () => {
     if (process.env.ENV_IS_DOT_ENV == 'true') {
-      console.log('dsfsadfdsfsdafsfsdaas');
       require('dotenv').config();
     }
   });
